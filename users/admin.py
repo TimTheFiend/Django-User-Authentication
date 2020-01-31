@@ -6,10 +6,14 @@ from .models import CustomUser
 
 
 class CustomUserAdmin(UserAdmin):
+    """ `list_display` allows us to customise what we want to
+     List on the form. In this case we're overriding it to show
+     age.
+     """
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     list_display = ['email', 'username', 'age', ]
-    model = CustomUser    
+    model = CustomUser
 
 
 admin.site.register(CustomUser, CustomUserAdmin)

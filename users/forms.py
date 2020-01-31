@@ -6,6 +6,7 @@ from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
+        """ `email` isn't required in standard django, so we add it here  """
         model = CustomUser
         fields = ('username', 'email', )  # new
 
